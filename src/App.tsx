@@ -1,10 +1,24 @@
 import React from "react";
 import Button, { ButtonType, ButtonSize } from "./components/Button/button";
 import ScrollComponent from "./components/ScrollComponent";
-function App() {
+import Menu from "./components/Menu/menu";
+import MenuItem from "./components/Menu/menuItem";
+function App(props={
+}) {
   return (
     <div className="App">
-      <ScrollComponent dataList={[]} height={200} max={20}/>
+      <Menu defaultIndex={0} onSelect={(index)=>{}} mode={"vertical"}>
+        <MenuItem index={0}>
+          JNJNJ
+        </MenuItem>
+        <MenuItem index={1} disabled>
+          sf
+        </MenuItem>
+        <MenuItem index={2}>
+          sdfs
+        </MenuItem>
+      </Menu>
+      {/*<ScrollComponent dataList={[]} height={200} max={20}/>*/}
       {/*<header className="App-header">*/}
       {/*  <Button>nihao</Button>*/}
       {/*  <Button disabled={true}>nihao</Button>*/}
