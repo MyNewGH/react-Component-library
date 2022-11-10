@@ -3,18 +3,28 @@ import Button, { ButtonType, ButtonSize } from "./components/Button/button";
 import ScrollComponent from "./components/ScrollComponent";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
+import SubMenu from "./components/Menu/subMenu";
+import type { ParseOptions, StringifyOptions } from 'query-string';
 function App(props={
 }) {
   return (
     <div className="App">
-      <Menu defaultIndex={0} onSelect={(index)=>{}} mode={"vertical"}>
-        <MenuItem index={0}>
-          JNJNJ
+      <Menu defaultIndex='0' onSelect={(index)=>{alert(index)}} mode="vertical" defaultOpenSubMenus={['1']}>
+        <MenuItem>
+          active
         </MenuItem>
-        <MenuItem index={1} disabled>
-          sf
+          <SubMenu title="xxx">
+              <MenuItem>
+                5155
+              </MenuItem>
+            <MenuItem>
+              5155
+            </MenuItem>
+          </SubMenu>
+        <MenuItem disabled>
+          disabled
         </MenuItem>
-        <MenuItem index={2}>
+        <MenuItem>
           sdfs
         </MenuItem>
       </Menu>
@@ -38,14 +48,6 @@ function App(props={
       {/*  <p>*/}
       {/*    Edit <code>src/App.tsx</code> and save to reload.*/}
       {/*  </p>*/}
-      {/*  <a*/}
-      {/*    className="App-link"*/}
-      {/*    href="https://reactjs.org"*/}
-      {/*    target="_blank"*/}
-      {/*    rel="noopener noreferrer"*/}
-      {/*  >*/}
-      {/*    Learn React*/}
-      {/*  </a>*/}
       {/*</header>*/}
     </div>
   );
